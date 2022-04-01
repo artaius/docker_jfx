@@ -1,2 +1,2 @@
-# docker_jfx
+# Docker JFX
 Docker image containing Bellsoft JDK including JavaFx.
