@@ -11,8 +11,5 @@ RUN dnf -y install dnf-plugins-core
 RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN dnf config-manager --set-enabled powertools
 
-# install "xml_grep"
-RUN dnf -y install perl-XML-Twig
-
-# cleanup
-RUN dnf -y clean all
+# install "xml_grep" and Maven
+RUN dnf -y install perl-XML-Twig maven && rm -rf /var/cache/dnf/* && dnf clean all
