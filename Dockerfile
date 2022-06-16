@@ -13,3 +13,6 @@ RUN dnf config-manager --set-enabled powertools
 
 # install "xml_grep" and Maven
 RUN dnf -y install perl-XML-Twig maven && rm -rf /var/cache/dnf/* && dnf clean all
+
+# increase git http.postBuffer config to 2G (needed by GitLab CI/CD for large repos)
+RUN git config --global http.postBuffer 2097152000
